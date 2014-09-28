@@ -18,8 +18,4 @@ in the [Gitit User’s Guide]().
 
 test push pull conflict
 
-<<<<<<< edited
 From gitit should give no conflicts
-=======
-From gitit should give no conflict
->>>>>>> 8dfd37bf12d3bbb87f05bbe8a9a252dfeb9cd533

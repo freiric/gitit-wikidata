@@ -2,8 +2,6 @@
 format: Markdown
 ...
 
-This should give no conflict
-
 # Welcome to Gitit!
 
 This is the front page of your new gitit wiki.  You can edit this
@@ -17,3 +15,5 @@ More details on installing and configurating gitit are available
 in the [Gitit User’s Guide]().
 
 test push pull conflict
+
+From gitit should give no conflict

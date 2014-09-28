@@ -1,0 +1,13 @@
+- general presentation of gitit
+- gitit or gitit2 ? Happstack or Yesod
+- Some Happstack basics
+- Library involved
+- github login
+
+~~~{ .haskell }
+  let a = 1:a in head a
+~~~
+
+- open problem:
+
+  synchronization back

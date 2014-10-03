@@ -1,13 +1,32 @@
 - general presentation of gitit
 - gitit or gitit2 ? Happstack or Yesod
 - Some Happstack basics
+
+  - Handler
+  From
+   ~~~{ .haskell }
+	Request -> IO Response
+   ~~~
+ to
+   ~~~{ .haskell }
+        (ToMessage a) => ServerPartT IO a
+   ~~~
+
+   - combining handler: msum and mzero
+   ~~~{ .haskell }
+   Monad m => MonadPlus (ServerPartT m)
+   ~~~
+
+   MonadPlus
+
 - Library involved
 - github login
 
-~~~{ .haskell }
-  let a = 1:a in head a
-~~~
 
 - open problem:
 
   synchronization back
+
+
+Ref:
+http://www.happstack.com/docs/crashcourse/index.html

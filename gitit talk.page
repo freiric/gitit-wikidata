@@ -1,5 +1,11 @@
+#Intro
+
 - general presentation of gitit
 - gitit or gitit2 ? Happstack or Yesod
+- Some Happstack basics
+
+#Happstack
+
 - Some Happstack basics
 
   - Handler
@@ -9,7 +15,8 @@
 ~~~{ .haskell }
 	Request -> IO Response
 ~~~
- to
+
+to
 
 ~~~{ .haskell }
         (ToMessage a) => ServerPartT IO a

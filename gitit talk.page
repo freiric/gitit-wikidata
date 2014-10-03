@@ -6,6 +6,17 @@
 
 #Happstack
 
+- start the server
+
+~~~{ .haskell }
+-- simpleHTTPWithSocket :: ToMessage a => Socket -> Conf -> ServerPartT IO a -> IO ()
+simpleHTTPWithSocket :: ToMessage a => Socket -> Conf -> ServerPart Response -> IO ()
+simpleHTTPWithSocket sock serverConf $ msum [ wiki conf
+                               , dir "_reloadTemplates" reloadTemplates
+                               ]
+~~~
+
+
 - Some Happstack basics
 
   - Handler

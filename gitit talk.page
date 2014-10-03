@@ -4,18 +4,18 @@
 
   - Handler
   From
-   ~~~{ .haskell }
+~~~{ .haskell }
 	Request -> IO Response
-   ~~~
+~~~
  to
-   ~~~{ .haskell }
+~~~{ .haskell }
         (ToMessage a) => ServerPartT IO a
-   ~~~
+~~~
 
    - combining handler: msum and mzero
-   ~~~{ .haskell }
+~~~{ .haskell }
    Monad m => MonadPlus (ServerPartT m)
-   ~~~
+~~~
 
    MonadPlus
 

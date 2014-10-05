@@ -1,3 +1,5 @@
 todelete
 
 [dir/subdir/todelete]()
+
+[dir/subdir/todelete.txt]()

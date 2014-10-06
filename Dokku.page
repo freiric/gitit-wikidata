@@ -1,3 +1,7 @@
+---
+categories: dokku
+---
+
 #Run gitit on digitalocean using Dokku
 
 - modified buildpack https://github.com/freiric/heroku-buildpack-ghc

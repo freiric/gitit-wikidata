@@ -1,0 +1,99 @@
+#Intro
+
+- general presentation of gitit
+- gitit or gitit2 ? Happstack or Yesod
+- Some Happstack basics
+
+#Happstack
+
+## Handlers
+
+- start the server
+
+~~~{ .haskell }
+simpleHTTPWithSocket :: ToMessage a => Socket -> Conf -> ServerPart Response -> IO ()
+simpleHTTPWithSocket sock
+	                 serverConf 
+					 (msum [ wiki conf
+	                       , dir "_reloadTemplates" reloadTemplates])
+~~~
+
+Don't pay attention to `sock` and `serverConf`, these set up some stuff like port number, socket protocol (you want internet socket), request logging and timeout before killing request handler thread.
+
+Rest the handler, it is the action triggered when you hit a web page:
+
+~~~{ .haskell }
+ServerPart Response
+msum [ wiki conf
+	 , dir "_reloadTemplates" reloadTemplates])
+~~~
+
+We need to explain what is `msum`, `ServerPart Response` and `dir`, and what the heck does `wiki conf` returns.
+
+-------------------
+
+## what is this `msum` function?
+
+~~~{ .haskell }
+class Monad m => MonadPlus m where
+  mzero :: m a
+  mplus :: m a -> m a -> m a
+~~~
+
+For List (List is a `Monad`), we have the empty list, and concatenation.
+For our handler of type `ServerPart Response`.
+
+The behaviour of MonadPlus is to try each `ServerPart` in succession, until one succeeds.
+
+~~~{ .haskell }
+   Monad m => MonadPlus ServerPart
+~~~
+
+So `mplus` is aggregation for List:
+
+~~~{ .haskell }
+msum :: MonadPlus m => [m a] -> m a
+msum = foldr mplus mzero
+~~~
+
+And `wiki conf` returns a list of handler:
+
+~~~{ .haskell }
+ServerPart Response
+msum [ wiki conf
+	 , dir "_reloadTemplates" reloadTemplates])
+~~~
+
+-----------------
+
+
+- Some Happstack basics
+
+  - Handler
+
+  From
+
+~~~{ .haskell }
+	Request -> IO Response
+~~~
+
+to
+
+~~~{ .haskell }
+        (ToMessage a) => ServerPartT IO a
+~~~
+
+
+   MonadPlus
+
+- Library involved
+- github login
+
+
+- open problem:
+
+  synchronization back
+
+
+Ref:
+http://www.happstack.com/docs/crashcourse/index.html

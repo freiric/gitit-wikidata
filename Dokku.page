@@ -2,6 +2,16 @@
 categories: dokku
 ...
 
+#Simple install: clone of gitit and modification inside gitit
+
+'''
+git clone 
+'''
+
+#Install with gitit as submodule
+
+
+
 #Run gitit on digitalocean using Dokku
 
 - modified buildpack https://github.com/freiric/heroku-buildpack-ghc

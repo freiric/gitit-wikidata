@@ -6,9 +6,9 @@ categories: dokku, dodo
 
 #Simple install: clone of gitit and modification inside gitit
 
-'''
+```
 git clone 
-'''
+```
 
 #Install with gitit as submodule
 

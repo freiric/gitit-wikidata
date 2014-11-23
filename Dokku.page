@@ -14,7 +14,7 @@ git clone
 
 #Run gitit on digitalocean using Dokku
 
-- modified buildpack https://github.com/freiric/heroku-buildpack-ghc
+- modified buildpack
 
   * add-source for giti: at the moment of developping the wiki, gitit was released in aversion not running under ghc 7.8.2, as given by the buildpacks
   * add locale to pass compilation errors
